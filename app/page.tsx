@@ -44,7 +44,7 @@ export default function HomePage() {
     <div className="overflow-hidden">
 
       {/* Hero Section - ALTURA CORREGIDA */}
-      <section className="relative h-screen min-h-[600px] max-h-[900px]">
+      <section className="relative h-[100dvh] min-h-[600px] max-h-[900px]">
         <div className="grid md:grid-cols-2 h-full">
           {/* Left Side */}
           <div className="relative overflow-hidden group">
@@ -103,7 +103,7 @@ export default function HomePage() {
         className="container-custom py-10 sm:py-12 md:py-16 lg:py-20"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Se anima una sola vez al hacer scroll
+        viewport={{ once: true, amount: 0.1 }} // Se anima una sola vez al hacer scroll
         variants={staggerContainer}
       >
         <div className="text-center mb-8 sm:mb-10 md:mb-12 px-4">
