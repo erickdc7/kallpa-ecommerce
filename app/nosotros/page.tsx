@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { Target, Eye, Heart, Users, Sparkles, Calendar, Award, Gem, HeartHandshake, Briefcase, Leaf } from 'lucide-react';
+import { Target, Eye, Heart, Users, Sparkles, Calendar, Award, Gem, HeartHandshake, Briefcase, Leaf, Clock, MapPin } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 
 // --- DEFINICIÓN DE VARIANTES ---
@@ -110,9 +110,15 @@ export default function NosotrosPage() {
     },
   ];
 
-  return (
-    <div className="container-custom py-12 md:py-20 overflow-hidden">
+  const schedule = [
+    { day: 'Lun - Vie', hours: '10:00 - 19:00', open: true },
+    { day: 'Sábado', hours: '10:00 - 16:00', open: true },
+    { day: 'Domingo', hours: 'Cerrado', open: false },
+  ];
 
+
+  return (
+    <div className="container-custom py-12 md:py-20 overflow-hidden mt-16 sm:mt-16">
       {/* --- HERO SECTION - NUESTRA HISTORIA --- */}
       <section className="mb-20">
         <motion.div
@@ -393,6 +399,136 @@ export default function NosotrosPage() {
         </motion.div>
       </section>
 
+      {/* --- VISÍTANOS (BENTO GRID) --- */}
+      <section className="my-20">
+        <motion.div
+          className="text-center mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <h2 className="mb-4 text-2xl sm:text-3xl md:text-4xl">Visítanos</h2>
+          <p className="text-[var(--color-neutral)] max-w-2xl mx-auto px-4 text-sm sm:text-base">
+            Encuéntranos y visítanos en nuestro espacio artesanal
+          </p>
+        </motion.div>
+
+        {/* BENTO GRID LAYOUT */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {/* IMAGEN DE LA TIENDA (Grande - Ocupa 2 columnas en desktop) */}
+          <motion.div
+            variants={fadeInUp}
+            className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-2xl shadow-lg group"
+          >
+            <div className="relative h-[300px] sm:h-[400px] md:h-full min-h-[500px]">
+              <img
+                src="https://images.unsplash.com/photo-1736865875785-2073deb7185c?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Tienda Kallpa"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+              {/* Badge "Abierto ahora" */}
+              {/*  <div className="absolute top-4 left-4 flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold">Abierto ahora</span>
+              </div> */}
+
+              {/* Texto sobre la imagen */}
+              <div className="absolute bottom-6 left-6 text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-2">Nuestro espacio</h3>
+                <p className="text-white/90 text-sm sm:text-base max-w-md">
+                  Kallpa, arte en crochet hecho a mano
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* HORARIO */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-[var(--color-accent)]/5 rounded-2xl p-6 border border-[var(--color-accent)]/10"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-[var(--color-cta)]/10 rounded-full flex items-center justify-center">
+                <Clock className="w-6 h-6 text-[var(--color-cta)]" />
+              </div>
+              <h3 className="text-xl font-semibold">Horario</h3>
+            </div>
+
+            <div className="space-y-3">
+              {schedule.map((item, idx) => (
+                <div key={idx} className="flex justify-between items-center py-2 border-b border-[var(--color-neutral)]/10 last:border-0">
+                  <span className="text-[var(--color-neutral)] text-sm sm:text-base font-medium">{item.day}</span>
+                  <span className={`text-sm sm:text-base font-semibold ${item.open ? 'text-[var(--color-cta)]' : 'text-[var(--color-neutral)]/50'}`}>
+                    {item.hours}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* UBICACIÓN */}
+          <motion.div
+            variants={fadeInUp}
+            className="bg-[var(--color-secondary)]/5 rounded-2xl p-6 border border-[var(--color-secondary)]/10"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-[var(--color-secondary)]/10 rounded-full flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-[var(--color-secondary)]" />
+              </div>
+              <h3 className="text-xl font-semibold">Ubicación</h3>
+            </div>
+
+            <div className="space-y-3">
+              <div>
+                <p className="text-[var(--color-neutral)] text-sm sm:text-base leading-relaxed">
+                  Trujillo, La Libertad<br />
+                  Perú
+                </p>
+              </div>
+              <a
+
+                href="https://maps.app.goo.gl/P8Zd36pjnaoQ8zTK7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--color-cta)] hover:text-[var(--color-primary)] transition-colors text-sm sm:text-base font-medium mt-4"
+              >
+                Ver en Google Maps
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* MAPA DE GOOGLE (Ocupa 3 columnas - Ancho completo) */}
+          <motion.div
+            variants={fadeInUp}
+            className="md:col-span-3 rounded-2xl overflow-hidden shadow-lg h-[300px] sm:h-[400px]"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63197.60046857706!2d-79.09801459481945!3d-8.116748239861971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d7fe3fae92d%3A0xd3bc7d125d4e8508!2sTrujillo!5e0!3m2!1ses!2spe!4v1765819924217!5m2!1ses!2spe"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale-[0.3] hover:grayscale-0 transition-all duration-500"
+            ></iframe>
+          </motion.div>
+        </motion.div>
+      </section>
+
+
       {/* --- CTA SECTION --- */}
       <motion.section
         className="mt-16 sm:mt-20 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-cta)] rounded-2xl p-8 md:p-12 text-center text-white"
@@ -414,7 +550,7 @@ export default function NosotrosPage() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-[var(--color-primary)] px-8 py-3 rounded-lg hover:bg-white/90 transition-colors font-semibold shadow-lg" 
+            className="bg-white text-[var(--color-primary)] px-8 py-3 rounded-lg hover:bg-white/90 transition-colors font-semibold shadow-lg"
           >
             Instagram
           </motion.a>

@@ -100,7 +100,7 @@ export default function BolsoDetailPage({
 
   return (
     // RESPONSIVE: Padding vertical reducido en móvil
-    <div className="container-custom py-8 md:py-12">
+    <div className="container-custom py-8 md:py-12 mt-16 sm:mt-20">
 
       {/* Breadcrumb */}
       <motion.div

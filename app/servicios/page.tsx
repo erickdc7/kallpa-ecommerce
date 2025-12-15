@@ -50,7 +50,7 @@ export default function ServiciosPage() {
 
       {/* --- HERO SECTION --- */}
       {/* Cambio: min-h-[500px] permite que crezca si el texto es largo en móvil */}
-      <section className="relative min-h-[500px] lg:h-[650px] flex items-center overflow-hidden">
+      <section className="relative min-h-[500px] lg:h-[650px] flex items-center overflow-hidden mt-16 sm:mt-20">
 
         {/* Imagen de fondo */}
         <div

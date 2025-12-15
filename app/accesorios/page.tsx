@@ -93,7 +93,7 @@ export default function AccesoriosPage() {
   };
 
   return (
-    <div className="container-custom py-12 min-h-screen">
+    <div className="container-custom py-12 min-h-screen mt-16 sm:mt-20">
       
       {/* Header Animado */}
       <motion.div 

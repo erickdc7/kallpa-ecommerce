@@ -1,5 +1,4 @@
 // app/page.tsx
-// app/page.tsx
 'use client';
 
 import React from 'react';
@@ -8,10 +7,7 @@ import { ProductCard } from './components/ProductCard';
 import { getFeaturedProducts } from './lib/products';
 import Link from 'next/link';
 import Image from 'next/image';
-// 1. IMPORTAMOS 'Variants' ADEMÁS DE 'motion'
 import { motion, Variants } from 'framer-motion';
-
-// 2. TIPAMOS LAS VARIABLES COMO 'Variants'
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -45,10 +41,10 @@ export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
 
   return (
-    <div className="overflow-hidden"> {/* overflow-hidden evita scrollbars horizontales por animaciones */}
+    <div className="overflow-hidden">
 
-      {/* Hero Section */}
-      <section className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[750px]">
+      {/* Hero Section - ALTURA CORREGIDA */}
+      <section className="relative h-screen min-h-[600px] max-h-[900px]">
         <div className="grid md:grid-cols-2 h-full">
           {/* Left Side */}
           <div className="relative overflow-hidden group">
@@ -61,27 +57,27 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-black/40" />
             </div>
 
-            <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 text-white">
+            <div className="relative z-10 h-full flex flex-col justify-end md:justify-end p-6 sm:p-8 md:p-10 lg:p-16 text-white">
               <motion.div
                 className="max-w-lg"
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
               >
-                <motion.h1 variants={fadeInUp} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white mb-4 sm:mb-6 leading-tight font-bold">
+                <motion.h1 variants={fadeInUp} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 leading-tight font-bold">
                   Descubre Kallpa
                 </motion.h1>
-                <motion.p variants={fadeInUp} className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
+                <motion.p variants={fadeInUp} className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
                   Bolsos tejidos a mano con materiales de alta calidad,
                   hechos con orgullo en Trujillo, Perú.
                 </motion.p>
                 <motion.div variants={fadeInUp}>
                   <Link
                     href="/bolsos"
-                    className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full border-2 border-white/80 hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 group text-sm sm:text-base"
+                    className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full border-2 border-white/80 hover:bg-white hover:text-[var(--color-primary)] transition-all duration-300 group text-base sm:text-lg font-medium shadow-lg"
                   >
                     <span>Explorar Kallpa</span>
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </motion.div>
               </motion.div>

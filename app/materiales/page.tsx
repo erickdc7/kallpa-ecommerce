@@ -83,7 +83,7 @@ export default function MaterialesPage() {
     <div className="overflow-hidden">
 
       {/* --- HERO SECTION --- */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-secondary)]/10 via-[var(--color-bg)] to-[var(--color-accent)]/10">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-secondary)]/10 via-[var(--color-bg)] to-[var(--color-accent)]/10 mt-16 sm:mt-12">
         <div className="container-custom py-12 md:py-20 lg:py-24">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
 
