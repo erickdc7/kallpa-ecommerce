@@ -54,7 +54,7 @@ const drawLineHorizontal: Variants = {
 
 export default function NosotrosPage() {
   const teamMembers = [
-    { name: 'Alexandra Huamán', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop' },
+    { name: 'Alexandra Huamán', role: 'Integrante del equipo', image: '/images/alexandra-huaman.jpg' },
     { name: 'María Llanos', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop' },
     { name: 'Yeny López', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop' },
     { name: 'Lorena Marcelo', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop' },
