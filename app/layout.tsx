@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={lato.className} suppressHydrationWarning>
-        {/* <Preloader  /> */}
+        <Preloader />
         <CartProvider>
           <div className="min-h-screen flex flex-col">
             <Header />
