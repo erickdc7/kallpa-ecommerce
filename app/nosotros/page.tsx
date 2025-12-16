@@ -56,11 +56,11 @@ export default function NosotrosPage() {
   const teamMembers = [
     { name: 'Alexandra Huamán', role: 'Integrante del equipo', image: '/images/alexandra-huaman.jpg' },
     { name: 'María Llanos', role: 'Integrante del equipo', image: '/images/maria-llanos.jpg' },
-    { name: 'Yeny López', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop' },
-    { name: 'Lorena Marcelo', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop' },
+    { name: 'Yeny López', role: 'Integrante del equipo', image: '/images/yeny-lopez.jpg' },
+    { name: 'Lorena Marcelo', role: 'Integrante del equipo', image: '/images/lorena-marcelo.jpg' },
     { name: 'Alessandro Pérez', role: 'Integrante del equipo', image: '/images/alessandro-perez.jpg' },
-    { name: 'Rocío Romero', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop' },
-    { name: 'Janeth Siapo', role: 'Integrante del equipo', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop' },
+    { name: 'Rocío Romero', role: 'Integrante del equipo', image: '/images/rocio-romero.jpg' },
+    { name: 'Janeth Siapo', role: 'Integrante del equipo', image: '/images/janeth-siapo.jpg' },
     { name: 'Brenda Vidal', role: 'Integrante del equipo', image: '/images/brenda-vidal.jpg' },
   ];
 
